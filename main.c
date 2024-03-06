@@ -1,5 +1,4 @@
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
 #include <SDL2/SDL_timer.h>
 #include <stdio.h> 
 #include <time.h>
@@ -15,12 +14,12 @@ int main(void) {
     point_t lastPoint = center;
     point_t* shape = createShape(SIDES, SIZE, center.position);
 
-    srand(time(NULL));
-    if(SDL_Init(SDL_INIT_TIMER | SDL_INIT_VIDEO) != 0) printf("Error during initialization: %s",SDL_GetError());
+    
+    if(SDL_Init(SDL_INIT_TIMER | SDL_INIT_VIDEO | SDL_INIT_EVENTS) != 0) printf("Error during initialization: %s",SDL_GetError());
     initScene(&scene);
-    /**
-     * main loop
-    */
+    srand(time(NULL));
+    
+    // main loop
     while(!scene.exit) {
         const Uint8* keyboard = SDL_GetKeyboardState(NULL);
         SDL_Event event;

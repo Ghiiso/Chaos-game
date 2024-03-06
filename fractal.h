@@ -14,4 +14,5 @@ point_t* createShape(int sides, int size, Vector2 center);
  * vertices and the last used point
 */
 point_t getNextPoint(point_t oldPoint, point_t* vertices, int length);
+
 #endif

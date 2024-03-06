@@ -1,12 +1,11 @@
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
 #include <SDL2/SDL_timer.h>
 #include <stdio.h> 
 #include "constants.h"
 #include "Vector2.h"
 #include "types.h"
-#include "scene.h"
 #include "fractal.h"
+#include "scene.h"
 
 void initScene(scene_t* this) {
     this->window = SDL_CreateWindow (
